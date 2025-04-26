@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe5b4, #ffc6c6);
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #d10000;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.item {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  margin: 5px 0;
+  color: #333;
+}
+
+.item p {
+  margin: 5px 0 10px;
+  font-weight: bold;
+}
+
+.item button {
+  padding: 10px 15px;
+  background: #ff4747;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.item button:hover {
+  background: #d10000;
+}
+
+/* Offline Overlay */
+.offline-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(30,30,30,0.95);
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.offline-content {
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.offline-content img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.offline-content p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.view-orders-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  background-color: #d10000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.orders-panel {
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.orders-panel.active {
+  right: 0;
+}
+
+.orders-panel h2 {
+  margin-bottom: 15px;
+}
+
+#orderList {
+  list-style: none;
+  padding: 0;
+}
+
+#orderList li {
+  margin-bottom: 10px;
+  text-align: left;
+  background: #ffe5b4;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+#orderList li button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.close-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #d10000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-x:hover {
+  transform: scale(1.2);
+}
